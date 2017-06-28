@@ -1,0 +1,28 @@
+<table>
+	<tr>
+	<th rowspan='2'>Name</th>
+	<th rowspan='2'>Type</th>
+	<th colspan='5'>Attack Power</th>
+	</tr>
+	<tr>
+		<th>Physical</th>
+		<th>Magic</th>
+		<th>Fire</th>
+		<th>Lightning</th>
+		<th>Dark</th>
+	</tr>
+	<tbody>
+	<tr *ngFor="let weapon of weapons" (click)="onSelect(weapon)">
+	<td>{{weapon.Name}}</td>
+	<td>{{weapon.Type}}</td>
+	<td>{{weapon.BasePhysical}}
+	<td>{{weapon.BaseMagic}}</td>
+	<td>{{weapon.BaseFire}}</td>
+	<td>{{weapon.BaseLightning}}</td>
+	<td>{{weapon.BaseFire}}</td>
+	</tr></tbody>
+</table>
+<div *ngIf="selected">
+	<h1>{{selected.Name}} Selected </h1>
+	<button (click)="gotoDetail()">View Details</button>
+</div>

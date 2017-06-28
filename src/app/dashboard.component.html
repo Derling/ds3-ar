@@ -1,0 +1,27 @@
+<h2>Random Weapon</h2>
+<div>
+<table>
+	<tr>
+	<th rowspan='2'>Name</th>
+	<th rowspan='2'>Type</th>
+	<th colspan='5'>Attack Power</th>
+	</tr>
+	<tr>
+		<th>Physical</th>
+		<th>Magic</th>
+		<th>Fire</th>
+		<th>Lightning</th>
+		<th>Dark</th>
+	</tr>
+	<tbody>
+	<tr *ngFor="let w of weapon" (click)="gotoDetail(w)">
+	<td>{{w.Name}}</td>
+	<td>{{w.Type}}</td>
+	<td>{{w.BasePhysical}}
+	<td>{{w.BaseMagic}}</td>
+	<td>{{w.BaseFire}}</td>
+	<td>{{w.BaseLightning}}</td>
+	<td>{{w.BaseDark}}</td>
+	</tr></tbody>
+</table>
+</div>
