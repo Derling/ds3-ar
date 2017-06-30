@@ -46,7 +46,6 @@ export class Calculator {
     this.bonusMagic = +this.weapon.getBaseDmgs()['Magic'] * ((+this.weapon.getScaling()['Int'])/100 * this.getSaturation(this.weapon.getIndexes()['Magic'],this.stats['Int'])/100)
   }
   private calculateBonusPhysical(): void {
-    console.log((this.weapon.getScaling()['Str'])/100);
     this.bonusPhysical = +this.weapon.getBaseDmgs()['Physical'] * ((+this.weapon.getScaling()['Str'])/100 * this.getSaturation(this.weapon.getIndexes()['Physical'],this.stats['Str'])/100 +
         (+this.weapon.getScaling()['Dex'])/100 * this.getSaturation(this.weapon.getIndexes()['Physical'],this.stats['Dex'])/100);
   }
