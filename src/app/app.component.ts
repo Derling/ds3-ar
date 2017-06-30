@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Weapon } from './WEapon';
+import { Weapon } from './Weapon';
 import 'rxjs/add/operator/toPromise';
 import { WeaponDataService } from './weapon-data.service';
 import { Calculator } from './Calculator';

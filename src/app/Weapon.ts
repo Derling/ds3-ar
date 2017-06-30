@@ -1,8 +1,7 @@
-import { OnInit } from '@angular/core';
-export class Weapon implements OnInit{
-  baseDmg: number;
-  constructor(private weapon: {}) { }
-  ngOnInit(): void {
+export class Weapon {
+  baseDmg: number = 0;
+  constructor(private weapon: {}) { this.init() }
+  init(): void {
     this.baseDmg = +this.weapon['BasePhysical'] + +this.weapon['BaseMagic'] + +this.weapon['BaseFire']
       + +this.weapon['BaseLightning'] + +this.weapon['BaseDark'];
   }
