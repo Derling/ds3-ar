@@ -1,0 +1,8 @@
+#1 - complete ds3 and acquire all weapons.
+#2 - upgrade all weapons to +10
+#3 - compare old patch data to current patch data
+#4 determine whether saturation curves have changed or not by running tests on current saturation curve data, compare to mugenmonkey site
+#5 fix anything that is incorrect
+#6 retest
+#7 finish views
+#8 rejoice
