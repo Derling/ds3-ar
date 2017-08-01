@@ -1,26 +1,72 @@
-<div *ngFor="let w of _weapon" (click)="debug(w)">
-	<div col = 1> 
-		<label><strong>PICTURE</strong></label>
+<div *ngFor="let w of _weapon" style="width:auto;">
+	<div class="basic_data" style="display:inline; float:left;">
+		<table>
+			<tbody>
+			<tr>
+				<th rowspan='6'>
+					<div style="text-align:center;">
+						<img style='height: 100%; width: 100%; object-fit: contain' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/broadsword-icon.png" alt='e'>
+						<h2>{{w.name}}</h2>
+					</div>
+				</th>
+				<th colspan='2'>
+					<p>Base Damages</p>
+				</th>
+				<th>
+					<div>
+						<select [(ngModel)]="currentClass">
+							<option *ngFor="let c of _classes; let i = index" value={{i}}>{{c.class}}</option>
+						</select>
+					</div>
+				</th>
+			</tr>
+			<tr>
+				<td>
+					<img style="display:block;margin:0 auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-wp_physicalAttack.png" alt='e'>
+				</td>
+				<td>
+					<p>{{w.base_damages.Normal.physical}}</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img style="display:block;margin:0 auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-magicbonus.png" alt='e'>
+				</td>
+				<td>
+					<p>{{w.base_damages.Normal.magic}}</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img style="display:block;margin:0 auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-firebonus.png" alt='e'>
+				</td>
+				<td>
+					<p>{{w.base_damages.Normal.fire}}</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img style="display:block;margin:0 auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-lightningbonus.png" alt='e'>
+				</td>
+				<td>
+					<p>{{w.base_damages.Normal.lightning}}</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img style="display:block;margin:0 auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-darkbonus.png" alt='e'>
+				</td>
+				<td>
+					<p>{{w.base_damages.Normal.dark}}</p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img title="type"  src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/weapon_type-icon.jpg" alt='e'>
+					<h3 style="display:inline"> {{w.basic_data.wep_type}}</h3>
+				</td>
+			</tr>
+			</tbody>
+		</table>
 	</div>
-	<div col = 2>
-		<label><strong>Name & Type</strong></label>
-	</div>
-		<div>
-			<label><strong>requirements</strong></label>
-		</div>
-		<div>
-			<label><strong>Base Damages</strong></label>
-		</div>
-		<div>
-			<label><strong>Infusions</strong></label>
-		</div>
-	<div col = 3>
-		<label><strong>Class & level</strong></label>
-	</div>
-		<div>
-			<label><strong>stats : str,dex,int,faith,luck</strong></label>
-		</div>
-		<div>
-			<label><strong>toatl damages :</strong></label>
-		</div>
-	
+</div>
