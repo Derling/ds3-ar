@@ -9,21 +9,16 @@ import { Weapon } from './Weapon';
 })
 
 export class ViewWeaponsComponent implements OnInit {
-  weapons: Weapon[] = [];
-  selected: any;
+  weapons = [];
   constructor(private weaponService: WeaponDataService,
               private router: Router) {}
   ngOnInit(): void {   this.getWeapons();
   }
   getWeapons() {
-    this.weaponService.getWeapons().then(weapons => this.weapons = weapons);
+    this.weaponService.getWeapons()
+		.then(weapons => this.weapons = weapons);
   }
-  onSelect(w: {}){
-	  this.selected = w;
-	  console.log(w);
-	  console.log(this.selected.Name);
-	}
-  gotoDetail(): void {
-	  this.router.navigate(['/detail',this.selected.Name]);
+  gotoDetail(weapon): void {
+	  this.router.navigate(['/detail',weapon.name]);
   }
 }

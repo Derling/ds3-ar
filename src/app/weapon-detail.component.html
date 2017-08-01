@@ -1,2 +1,26 @@
-<div *ngIf="weapon" (click)="debug(weapon)"><h1>{{weapon.Name}} Choosen</h1></div>
-
+<div *ngFor="let w of _weapon" (click)="debug(w)">
+	<div col = 1> 
+		<label><strong>PICTURE</strong></label>
+	</div>
+	<div col = 2>
+		<label><strong>Name & Type</strong></label>
+	</div>
+		<div>
+			<label><strong>requirements</strong></label>
+		</div>
+		<div>
+			<label><strong>Base Damages</strong></label>
+		</div>
+		<div>
+			<label><strong>Infusions</strong></label>
+		</div>
+	<div col = 3>
+		<label><strong>Class & level</strong></label>
+	</div>
+		<div>
+			<label><strong>stats : str,dex,int,faith,luck</strong></label>
+		</div>
+		<div>
+			<label><strong>toatl damages :</strong></label>
+		</div>
+	

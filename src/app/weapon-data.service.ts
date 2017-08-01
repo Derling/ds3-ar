@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import { Weapon } from './Weapon';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class WeaponDataService {
-  private weaponsUrl = 'api/weapons';
+  private weaponsUrl = 'http://localhost:3000/weapons';
   constructor(private http: Http) {}
   getWeapons(): Promise<any> {
     return this.http.get(this.weaponsUrl)
                 .toPromise()
-                .then(response => response.json().data)
+                .then(response => response.json())
                 .catch(this.handleError);
   }
   private handleError(error: any) {
@@ -21,7 +20,7 @@ export class WeaponDataService {
   }
   findWeapon(weapons: any,name: string) {
 	  for(let i of weapons) {
-		  if(i.Name == name) {
+		  if(i.name == name) {
 			  return i;
 		  }
 	  }

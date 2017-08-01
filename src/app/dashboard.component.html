@@ -13,15 +13,14 @@
 		<th>Lightning</th>
 		<th>Dark</th>
 	</tr>
-	<tbody>
-	<tr *ngFor="let w of weapon" (click)="gotoDetail(w)">
-	<td>{{w.Name}}</td>
-	<td>{{w.Type}}</td>
-	<td>{{w.BasePhysical}}
-	<td>{{w.BaseMagic}}</td>
-	<td>{{w.BaseFire}}</td>
-	<td>{{w.BaseLightning}}</td>
-	<td>{{w.BaseDark}}</td>
-	</tr></tbody>
+	<tbody *ngFor="let w of weapon" (click)="gotoDetail(w)">
+		<td> {{w.name}}</td>
+		<td> {{w.basic_data.wep_type}}</td>
+		<td> {{w.base_damages.Normal.physical}}</td>
+		<td> {{w.base_damages.Normal.magic}}</td>
+		<td> {{w.base_damages.Normal.fire}}</td>
+		<td> {{w.base_damages.Normal.lightning}}</td>
+		<td> {{w.base_damages.Normal.dark}}</td>
+	</tbody>
 </table>
 </div>

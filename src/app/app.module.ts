@@ -18,7 +18,7 @@ import { InMemoryDataService } from './in-memory-data.service'
   ],
   imports: [
     BrowserModule, HttpModule, FormsModule, AppRoutingModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService),
+    
   ],
   providers: [WeaponDataService],
   bootstrap: [AppComponent]
