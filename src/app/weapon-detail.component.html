@@ -2,68 +2,103 @@
 	<div class="basic_data" style="display:inline; float:left;">
 		<table>
 			<tbody>
-			<tr>
-				<th rowspan='6'>
-					<div style="text-align:center;">
-						<img style='height: 100%; width: 100%; object-fit: contain' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/broadsword-icon.png" alt='e'>
-						<h2>{{w.name}}</h2>
-					</div>
-				</th>
-				<th colspan='2'>
-					<p>Base Damages</p>
+			<tr id=1>
+				<th rowspan='7'>
+					<img style='height: 100%; width: 100%; object-fit: contain' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/greataxe-icon.png" alt='e'>
+					<h2>{{w.name}}</h2>
+					<img title="type"  src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/weapon_type-icon.jpg" alt='e'>
+					<h3 style="display:inline">{{w.basic_data.wep_type}}</h3>
 				</th>
 				<th>
-					<div>
-						<select [(ngModel)]="currentClass">
-							<option *ngFor="let c of _classes; let i = index" value={{i}}>{{c.class}}</option>
-						</select>
-					</div>
+					Class:
 				</th>
+				<th>
+					<select style="dispaly:inline;" [(ngModel)]="currentClass" (change)="update()">
+						<option *ngFor="let c of _classes; let i = index" value={{i}}>{{c.class}}</option>
+					</select>
+				</th>
+				<th>
+					Stats
+				<th>
 			</tr>
-			<tr>
-				<td>
-					<img style="display:block;margin:0 auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-wp_physicalAttack.png" alt='e'>
+			<tr id=2>
+				<td style="text-align:center;">
+					Level :
 				</td>
-				<td>
-					<p>{{w.base_damages.Normal.physical}}</p>
+				<td style="text-align:center;">
+					{{_classes[currentClass].level}}
 				</td>
-			</tr>
-			<tr>
-				<td>
-					<img style="display:block;margin:0 auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-magicbonus.png" alt='e'>
-				</td>
-				<td>
-					<p>{{w.base_damages.Normal.magic}}</p>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<img style="display:block;margin:0 auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-firebonus.png" alt='e'>
-				</td>
-				<td>
-					<p>{{w.base_damages.Normal.fire}}</p>
+				<td style="text-align:center;">
+					{{this.currentLevel}}
 				</td>
 			</tr>
-			<tr>
-				<td>
-					<img style="display:block;margin:0 auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-lightningbonus.png" alt='e'>
+			<tr id=3>
+				<td >
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-wp_physicalAttack.png" alt='e'>						
+					{{w.base_damages.Normal.physical}}
+				</td>
+				<td style="text-align:center;">
+					<img style="margin-left:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/STR.jpg" alt='e'>
+					{{stats.str}}
 				</td>
 				<td>
-					<p>{{w.base_damages.Normal.lightning}}</p>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<img style="display:block;margin:0 auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-darkbonus.png" alt='e'>
-				</td>
-				<td>
-					<p>{{w.base_damages.Normal.dark}}</p>
+					<button (click)="change('str',1)">up</button>
+					<button (click)="change('str',-1)">down</button>
 				</td>
 			</tr>
 			<tr>
+					<td>
+						<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-magicbonus.png" alt='e'>
+						{{w.base_damages.Normal.magic}}
+					</td>
+					<td style="text-align:center;">
+						<img style="margin:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/DEX.jpg" alt='e'>
+						{{stats.dex}}
+					</td>
+			</tr>
+			<tr id=4>
 				<td>
-					<img title="type"  src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/weapon_type-icon.jpg" alt='e'>
-					<h3 style="display:inline"> {{w.basic_data.wep_type}}</h3>
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-firebonus.png" alt='e'>
+					{{w.base_damages.Normal.fire}}
+				</td>
+				<td style="text-align:center;">
+					<img style="margin:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/INT.jpg" alt='e'>
+					{{stats.int}}
+				</td>
+			</tr>
+			<tr id=5>
+				<td>
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-lightningbonus.png" alt='e'>
+					{{w.base_damages.Normal.lightning}}
+				</td>
+				<td style="text-align:center;">
+					<img style="margin:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/FTH.jpg" alt='e'>
+					{{stats.faith}}
+				</td>
+			</tr>
+			<tr id=5>
+				<td>
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-darkbonus.png" alt='e'>
+					{{w.base_damages.Normal.dark}}
+				</td>
+				<td style="text-align:center;">
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/luck.jpg" alt="err">
+					{{stats.luck}}
+				</td>
+			</tr>  
+			<tr id=6>
+				<td style="text-align:center;">
+					<strong>Requirements</strong>
+				</td>
+				<td colspan='4'>
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/STR.jpg" alt='e'>
+					{{w.basic_data.str_req}}
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/DEX.jpg" alt='e'>
+					{{w.basic_data.dex_req}}
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/INT.jpg" alt='e'>
+					{{w.basic_data.int_req}}
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/FTH.jpg" alt='e'>
+					{{w.basic_data.faith_req}}
 				</td>
 			</tr>
 			</tbody>
