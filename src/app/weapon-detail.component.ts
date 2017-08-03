@@ -15,12 +15,18 @@ import { Calculator } from './calculator';
 
 export class WeaponDetailComponent implements OnInit {
   private _weapon = [];
+  private infusions = ['Blessed','Blood','Chaos','Crystal','Dark',
+	'Deep','Fire','Heavy','Hollow','Lightning','Normal','Poison','Raw','Refined',
+	'Sharp','Simple'];
   private _classes = CLASSES;
   public currentClass = 0;
-  public weapon : {};
   public currentLevel: number;
   public stats : {};
-  infusion = 'Normal';
+  private infIndex = 10;
+  public url = '';
+  public calculator : Calculator;
+  public base_dmgs : {};
+  public infStr = this.infusions [this.infIndex];
   constructor(private service:WeaponDataService,
   private route: ActivatedRoute, private location: Location) { }
   ngOnInit(): void {
@@ -31,12 +37,24 @@ export class WeaponDetailComponent implements OnInit {
   }
   assignWeapon(weapon) : void {
 	  this._weapon.push(weapon);
-	  this.weapon = this._weapon[0];
+	  this.calculator = new Calculator(this._weapon[0],this.infusions[this.infIndex],this.stats);
+	  for(let index in this._weapon[0].name){
+			if (this._weapon[0].name.charAt(index) == "'") {
+					this.url += '';
+			}
+			else if(this._weapon[0].name.charAt(index) == ' ') {
+				this.url += '_';
+			}
+			else { this.url += this._weapon[0].name.charAt(index); }
+	  }
+	  this.base_dmgs = this.calculator.weapon['base_damages'][this.infStr];
+	  
+	  
   }
-  change(stat : string, increment : number){
+  statChange(stat : string, increment : number){
 	  this.stats[stat] = this.stats[stat] + increment;
 	  this.currentLevel += increment;
-	  console.log(new Calculator(this.weapon,this.infusion,this.stats));
+	  this.calculator = new Calculator(this._weapon[0],this.infusions[this.infIndex],this.stats);
   }
   update(){
 	  this.currentLevel = this._classes[this.currentClass].level;
@@ -45,5 +63,11 @@ export class WeaponDetailComponent implements OnInit {
 				int : this._classes[this.currentClass].int,
 				faith : this._classes[this.currentClass].faith,
 				luck : this._classes[this.currentClass].luck};
+  }
+  changeInfusion() {
+	  this.infStr = this.infusions[this.infIndex];
+	  this.base_dmgs = this.calculator.weapon['base_damages'][this.infStr];
+	  this.calculator = new Calculator(this._weapon[0],this.infusions[this.infIndex],this.stats);
+	  
   }
 }
