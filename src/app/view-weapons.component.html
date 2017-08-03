@@ -1,5 +1,6 @@
 <table>
 	<tr>
+	<th rowspan='2'></th>
 	<th rowspan='2'>Name</th>
 	<th rowspan='2'>Type</th>
 	<th colspan='5'>Attack Power</th>
@@ -13,6 +14,9 @@
 	</tr>
 	<tbody>
 	<tr *ngFor="let weapon of weapons" (click)="gotoDetail(weapon)">
+	<td>
+	<img  style='height: 100px;width:64px;margin:0;' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/{{weapon.url}}.png" alt='e'>
+	</td>
 	<td> {{weapon.name}}</td>
 	<td> {{weapon.basic_data.wep_type}}</td>
 	<td> {{weapon.base_damages.Normal.physical}}</td>

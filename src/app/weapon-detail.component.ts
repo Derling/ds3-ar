@@ -70,4 +70,16 @@ export class WeaponDetailComponent implements OnInit {
 	  this.calculator = new Calculator(this._weapon[0],this.infusions[this.infIndex],this.stats);
 	  
   }
+  evaluateStats(): boolean {
+	  return (this.stats['str'] >= this._weapon[0].basic_data.str_req) &&
+			 (this.stats['dex'] >= this._weapon[0].basic_data.dex_req) &&
+			 (this.stats['int'] >= this._weapon[0].basic_data.int_req) && 
+			 (this.stats['faith'] >= this._weapon[0].basic_data.faith_req);
+  }
+  floor(num : number): number {
+	  return Math.floor(num);
+  }
+  round(num : number) : number {
+	  return Math.round(num);
+  }
 }

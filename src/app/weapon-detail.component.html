@@ -3,8 +3,8 @@
 		<table>
 			<tbody>
 			<tr id=1>
-				<th rowspan='7'>
-					<img style='height: 100%; width: 100%; object-fit: contain' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/{{url | lowercase}}-icon.png" alt='e'>
+				<th rowspan='7' >
+					<img  style='height: 100%;margin:0; object-fit:contain;' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/{{w.url}}.png" alt='e'>
 					<h2>{{w.name}}</h2>
 					<img title="type"  src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/weapon_type-icon.jpg" alt='e'>
 					<h3 style="display:inline">{{w.basic_data.wep_type}}</h3>
@@ -40,7 +40,7 @@
 			<tr id=3>
 				<td >
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-wp_physicalAttack.png" alt='e'>						
-					{{base_dmgs.physical}}
+					{{floor(base_dmgs.physical)}}
 				</td>
 				<td style="text-align:center;">
 					<img style="margin-left:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/STR.jpg" alt='e'>
@@ -54,7 +54,7 @@
 			<tr id=3>
 					<td>
 						<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-magicbonus.png" alt='e'>
-						{{base_dmgs.magic}}
+						{{floor(base_dmgs.magic)}}
 					</td>
 					<td style="text-align:center;">
 						<img style="margin:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/DEX.jpg" alt='e'>
@@ -68,7 +68,7 @@
 			<tr id=4>
 				<td>
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-firebonus.png" alt='e'>
-					{{base_dmgs.fire}}
+					{{floor(base_dmgs.fire)}}
 				</td>
 				<td style="text-align:center;">
 					<img style="margin:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/INT.jpg" alt='e'>
@@ -82,7 +82,7 @@
 			<tr id=5>
 				<td>
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-lightningbonus.png" alt='e'>
-					{{base_dmgs.lightning}}
+					{{floor(base_dmgs.lightning)}}
 				</td>
 				<td style="text-align:center;">
 					<img style="margin:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/FTH.jpg" alt='e'>
@@ -96,7 +96,7 @@
 			<tr id=6>
 				<td>
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-darkbonus.png" alt='e'>
-					{{base_dmgs.dark}}
+					{{floor(base_dmgs.dark)}}
 				</td>
 				<td style="text-align:center;">
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/luck.jpg" alt="err">
@@ -123,12 +123,19 @@
 				</td>
 			</tr>
 			<tr>
-				<td> 
+				<td colspan='2' style='text-align:center;'> 
 					<h1> Attack Rating: </h1>
 				</td>
+				<div *ngIf="evaluateStats() else notreq">
 				<td> 
-					<h2>{{calculator.totalDmg}}</h2>
+					<h2 title='AR: {{calculator.totalDmg}} | Phys: {{floor(base_dmgs.physical)}}+{{round(calculator.bonusPhysical)}} | Magic: {{floor(base_dmgs.magic)}}+{{round(calculator.bonusMagic)}} | Fire: {{floor(base_dmgs.fire)}}+{{round(calculator.bonusFire)}} | Lightning: {{floor(base_dmgs.lightning)}}+{{round(calculator.bonusLightning)}} | Dark: {{floor(base_dmgs.dark)}}+{{round(calculator.bonusDark)}}'>{{round(calculator.totalDmg)}}</h2>
 				</td>
+				</div>
+				<ng-template #notreq>
+				<td colspan='3'> 
+					Requirements not met
+				</td>
+				</ng-template>
 			</tr>
 			</tbody>
 		</table>

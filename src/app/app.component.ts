@@ -20,7 +20,7 @@ import { Calculator } from './Calculator';
 })
 
 export class AppComponent {
-  title = 'ds3-app';
+  title = 'Dark Souls 3 AR Calculator';
   selectedWeapon: Weapon;
   changeSelectedWeapon(weapon:Weapon) {
     this.selectedWeapon = weapon;
