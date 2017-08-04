@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeaponDataService } from './weapon-data.service';
 import { Router } from '@angular/router';
-import { Weapon } from './Weapon';
 
 @Component({
   selector: 'view-weapons',

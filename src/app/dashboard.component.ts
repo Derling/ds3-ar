@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Weapon } from './Weapon';
 import { WeaponDataService } from './weapon-data.service';
 import { Router } from '@angular/router';
 
