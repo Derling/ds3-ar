@@ -1,0 +1,36 @@
+* {
+	box-sizing: border-box;
+}
+
+body { 
+	font-size: 15px;
+	margin: auto;
+	font-family: "Courier New";
+}
+
+#main-div {
+	float: left;
+	width: 100%;
+	color: light gray;
+}
+
+h1 {
+	margin: auto;
+}
+
+.center {
+	text-align: center;
+}
+
+a {
+	text-decoration:none;
+	color: gray;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}

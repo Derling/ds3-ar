@@ -1,6 +1,6 @@
-<h2>Random Weapon</h2>
+<h2 class='center'>Random Weapon</h2>
 <div>
-<table>
+<table class='tbl center'>
 	<tr>
 	<th rowspan='2'></th>
 	<th rowspan='2'>Name</th>
@@ -16,15 +16,15 @@
 	</tr>
 	<tbody *ngFor="let w of weapon" (click)="gotoDetail(w)">
 		<td>
-			<img  style='height: 100px;width:64px;margin:0;' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/{{w.url}}.png" alt='e'>
+			<img class='icon' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/{{w.url}}.png" alt='e'>
 		</td>
-		<td> {{w.name}}</td>
-		<td> {{w.basic_data.wep_type}}</td>
-		<td> {{w.base_damages.Normal.physical}}</td>
-		<td> {{w.base_damages.Normal.magic}}</td>
-		<td> {{w.base_damages.Normal.fire}}</td>
-		<td> {{w.base_damages.Normal.lightning}}</td>
-		<td> {{w.base_damages.Normal.dark}}</td>
+		<td>{{w.name}}</td>
+		<td>{{w.basic_data.wep_type}}</td>
+		<td>{{w.base_damages.Normal.physical}}</td>
+		<td>{{w.base_damages.Normal.magic}}</td>
+		<td>{{w.base_damages.Normal.fire}}</td>
+		<td>{{w.base_damages.Normal.lightning}}</td>
+		<td>{{w.base_damages.Normal.dark}}</td>
 	</tbody>
 </table>
 </div>

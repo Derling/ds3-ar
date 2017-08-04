@@ -1,0 +1,17 @@
+.icon {
+	height: 100px;
+	width: 64px;
+	margin: 0;
+}
+.center { 
+	text-align: center;
+}
+
+.tbl {
+	margin: auto;
+	width: 100%;
+}
+
+td {
+	font-size: 1.2rem;
+}
