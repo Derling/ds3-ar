@@ -13,8 +13,8 @@ import { Calculator } from './Calculator';
         <a routerLink='/'>Dashboard</a>
         <a routerLink='all'>View Weapons</a>
         </nav>
-    </div>
-    <router-outlet></router-outlet>
+		<router-outlet></router-outlet>
+	</div>
   `,
   styleUrls: ['./app.component.css']
 })
