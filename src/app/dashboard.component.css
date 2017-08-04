@@ -13,5 +13,9 @@
 }
 
 td {
-	font-size: 1.2rem;
+	font-size: 1rem;
+}
+
+.right-border {
+	border-right: solid 1px red;
 }

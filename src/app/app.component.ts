@@ -6,10 +6,6 @@ import { Calculator } from './Calculator';
 @Component({
   selector: 'app-root',
   template: `
-  <html>
-	<head>
-	</head>
-	<body>
     <div id='main-div'>
         <h1 class='center'>{{title}}</h1>
 		<div>
@@ -20,8 +16,6 @@ import { Calculator } from './Calculator';
 		</div>
 		<router-outlet></router-outlet>
 	</div>
-	</body>
-  </html>
   `,
   styleUrls: ['./app.component.css']
 })
