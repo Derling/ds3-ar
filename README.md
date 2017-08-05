@@ -8,7 +8,7 @@ To run this locally, simply pull this repo and have nodejs and the angular cli i
 
 ### Prerequisites
 
-To run this locally the requirements are nodejs, angularcli, json-server(optional)
-```
-   <a href='https://nodejs.org/en/download/'>NodeJs</a>
-```
+First of all we need <a href='https://nodejs.org/en/download/'>Nodejs</a>
+Once that is done we need Angular Cli
+open your machines terminal and install angular cli
+to do this simply run ``` npm install @angular/cli ```
