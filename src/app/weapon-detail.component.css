@@ -1,0 +1,32 @@
+table {
+	margin:0px auto;
+}
+
+.icon {
+	height: 100px;
+	width: 100px;
+	object-fit: contain;
+}
+
+.wep_desc {
+	display:inline;
+}
+h1 {
+	font-size: 1rem;
+}
+
+.ar {
+	display: inline;
+}
+
+.center {
+	text-align: center;
+}
+
+.green {
+	color: green;
+}
+
+.red {
+	color: red;
+}

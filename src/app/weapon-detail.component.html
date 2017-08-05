@@ -1,39 +1,39 @@
-<div *ngFor="let w of _weapon" style="width:auto;">
-	<div class="basic_data" style="display:inline; float:left;">
-		<table>
+<div *ngFor="let w of _weapon" >
+	<div>
+		<table class='center'>
 			<tbody>
 			<tr id=1>
-				<th rowspan='7' >
-					<img  style='height: 100%;margin:0; object-fit:contain;' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/{{w.url}}.png" alt='e'>
+				<th rowspan='8' >
+					<img class='icon' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/{{w.url}}.png" alt='e'>
 					<h2>{{w.name}}</h2>
 					<img title="type"  src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/weapon_type-icon.jpg" alt='e'>
-					<h3 style="display:inline">{{w.basic_data.wep_type}}</h3>
-					<div *ngIf="w.basic_data.infusable === '!0'" style="float:right;">
+					<h3 class='wep_desc'>{{w.basic_data.wep_type}}</h3>
+					<div *ngIf="w.basic_data.infusable === '!0'" class='wep_desc'>
 						<select [(ngModel)]="infIndex" (change)="changeInfusion()">
 							<option *ngFor="let inf of infusions; let i=index" value={{i}}>{{inf}}</option>
 						</select>
 					</div>
 				</th>
-				<th>
-					Class:
-				</th>
-				<th>
-					<select style="dispaly:inline;" [(ngModel)]="currentClass" (change)="update()">
+			</tr>
+			<tr>
+			<td>Class:</td>
+				<td>
+					<select [(ngModel)]="currentClass" (change)="update()">
 						<option *ngFor="let c of _classes; let i = index" value={{i}}>{{c.class}}</option>
 					</select>
-				</th>
-				<th>
+				</td>
+				<td>
 					Stats
-				<th>
+				</td>
 			</tr>
 			<tr id=2>
-				<td style="text-align:center;">
-					Level :
+				<td>
+					Level:
 				</td>
-				<td style="text-align:center;">
+				<td>
 					{{_classes[currentClass].level}}
 				</td>
-				<td style="text-align:center;">
+				<td>
 					{{this.currentLevel}}
 				</td>
 			</tr>
@@ -42,8 +42,8 @@
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-wp_physicalAttack.png" alt='e'>						
 					{{floor(base_dmgs.physical)}}
 				</td>
-				<td style="text-align:center;">
-					<img style="margin-left:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/STR.jpg" alt='e'>
+				<td>
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/STR.jpg" alt='e'>
 					{{stats.str}}
 				</td>
 				<td>
@@ -56,8 +56,8 @@
 						<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-magicbonus.png" alt='e'>
 						{{floor(base_dmgs.magic)}}
 					</td>
-					<td style="text-align:center;">
-						<img style="margin:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/DEX.jpg" alt='e'>
+					<td>
+						<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/DEX.jpg" alt='e'>
 						{{stats.dex}}
 					</td>
 					<td>
@@ -70,8 +70,8 @@
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-firebonus.png" alt='e'>
 					{{floor(base_dmgs.fire)}}
 				</td>
-				<td style="text-align:center;">
-					<img style="margin:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/INT.jpg" alt='e'>
+				<td>
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/INT.jpg" alt='e'>
 					{{stats.int}}
 				</td>
 				<td>
@@ -84,8 +84,8 @@
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-lightningbonus.png" alt='e'>
 					{{floor(base_dmgs.lightning)}}
 				</td>
-				<td style="text-align:center;">
-					<img style="margin:auto;" src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/FTH.jpg" alt='e'>
+				<td >
+					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/FTH.jpg" alt='e'>
 					{{stats.faith}}
 				</td>
 				<td>
@@ -98,7 +98,7 @@
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/icon-darkbonus.png" alt='e'>
 					{{floor(base_dmgs.dark)}}
 				</td>
-				<td style="text-align:center;">
+				<td>
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/luck.jpg" alt="err">
 					{{stats.luck}}
 				</td>
@@ -108,34 +108,28 @@
 				</td>
 			</tr>  
 			<tr id=6>
-				<td style="text-align:center;">
+				<td>
 					<strong>Requirements</strong>
-				</td>
-				<td colspan='4'>
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/STR.jpg" alt='e'>
 					{{w.basic_data.str_req}}
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/DEX.jpg" alt='e'>
 					{{w.basic_data.dex_req}}
 					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/INT.jpg" alt='e'>
 					{{w.basic_data.int_req}}
-					<img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/FTH.jpg" alt='e'>
+				    <img src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/FTH.jpg" alt='e'>
 					{{w.basic_data.faith_req}}
 				</td>
-			</tr>
-			<tr>
-				<td colspan='2' style='text-align:center;'> 
-					<h1> Attack Rating: </h1>
-				</td>
-				<div *ngIf="evaluateStats() else notreq">
-				<td> 
-					<h2 title='AR: {{calculator.totalDmg}} | Phys: {{floor(base_dmgs.physical)}}+{{round(calculator.bonusPhysical)}} | Magic: {{floor(base_dmgs.magic)}}+{{round(calculator.bonusMagic)}} | Fire: {{floor(base_dmgs.fire)}}+{{round(calculator.bonusFire)}} | Lightning: {{floor(base_dmgs.lightning)}}+{{round(calculator.bonusLightning)}} | Dark: {{floor(base_dmgs.dark)}}+{{round(calculator.bonusDark)}}'>{{round(calculator.totalDmg)}}</h2>
-				</td>
+				<td colspan='3' class='center'> 
+					<h1 class='ar'> AR: </h1>
+				<div class='ar'  *ngIf="evaluateStats() else notreq">
+					<h2 class='ar green' title='AR: {{calculator.totalDmg}} | Phys: {{floor(base_dmgs.physical)}}+{{round(calculator.bonusPhysical)}} | Magic: {{floor(base_dmgs.magic)}}+{{round(calculator.bonusMagic)}} | Fire: {{floor(base_dmgs.fire)}}+{{round(calculator.bonusFire)}} | Lightning: {{floor(base_dmgs.lightning)}}+{{round(calculator.bonusLightning)}} | Dark: {{floor(base_dmgs.dark)}}+{{round(calculator.bonusDark)}}'>{{round(calculator.totalDmg)}}</h2>
 				</div>
 				<ng-template #notreq>
-				<td colspan='3'> 
-					Requirements not met
+				<td class='ar red'> 
+					Check Stats
 				</td>
 				</ng-template>
+				</td>
 			</tr>
 			</tbody>
 		</table>

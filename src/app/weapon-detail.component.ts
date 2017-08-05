@@ -10,7 +10,8 @@ import { Calculator } from './Calculator';
 
 @Component({
   selector: 'weapon-detail',
-  templateUrl: 'weapon-detail.component.html'
+  templateUrl: 'weapon-detail.component.html',
+  styleUrls: ['./weapon-detail.component.css']
 })
 
 export class WeaponDetailComponent implements OnInit {

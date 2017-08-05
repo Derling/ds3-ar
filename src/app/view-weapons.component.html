@@ -1,4 +1,4 @@
-<table class='center'>
+<table>
 	<tr>
 		<th rowspan='2'></th>
 		<th rowspan='2'>Name</th>
@@ -15,7 +15,7 @@
 	<tbody>
 		<tr *ngFor="let weapon of weapons" (click)='gotoDetail(weapon)'>
 			<td>
-				<img  style='height: 100px;width:64px;margin:0;' src="http://	darksouls3.wiki.fextralife.com/file/Dark-Souls-3/{{weapon.url}}.png" alt='e'>
+				<img style='height: 100px;width:64px;margin:0;' src="http://darksouls3.wiki.fextralife.com/file/Dark-Souls-3/{{weapon.url}}.png" alt='e'>
 			</td>
 			<td>{{weapon.name}}</td>
 			<td>{{weapon.basic_data.wep_type}}</td>
