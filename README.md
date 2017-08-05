@@ -9,7 +9,6 @@ To run this locally, simply pull this repo and have nodejs and the angular cli i
 ### Prerequisites
 
 To run this locally the requirements are nodejs, angularcli, json-server(optional)
-
-To install nodejs:
-
-windows : <a href='https://nodejs.org/en/'>go here</a>
+```
+   <a href='https://nodejs.org/en/download/'>NodeJs</a>
+```
