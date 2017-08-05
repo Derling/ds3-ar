@@ -1,3 +1,3 @@
-# ds3-ar
-My first solo project. Using Angularjs 4 and mysql, I will create a SPA(single page application) that allows the user to see what their potential build's attack rating, in dark souls 3, will be.
-update : current weapon data is obsolete, need more up-to-date weapon data.
+Dark Souls 3 Attack Rating Calculator
+
+A web-app that helps gamers, specifically those that play, FromSoftware's, Dark Souls 3 calculate their in game attack rating. 
