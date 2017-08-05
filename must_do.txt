@@ -1,6 +1,0 @@
-#1 format mugenmonkeys data into a nice json ---done
-#2 redesign calculating algorithmn --in progress
-#3 draw up view
-#4 code views 
-#5 style views
-#6 rejoice 
