@@ -26,3 +26,6 @@ open a seperate terminal and cd into the folder containg 'weapon_data.json' <br/
 ie your command should look simillar to this ``` cd ~/src/app/ ```<br/>
 once you are on that directory run this command ```json-server --watch weapon_data.json  ``` to have a seperate server host the necessary json file <br/>
 now the app is ready to run, open your browser and go to localhost::4200
+
+#### Personal Notes
+Reinvision available <a href='https://github.com/Derling/ds3-ar-v2'>here.</a> Please view this version.
